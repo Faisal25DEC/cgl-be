@@ -1,0 +1,28 @@
+node_modules/
+backup/
+
+# env & secrets
+.env
+.env.*.local
+
+# logs & dumps
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+dump.rdb
+
+# build / coverage
+dist/
+coverage/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+git init
+git add .
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/CGL-code/cgl-backend.git
+git push -u origin master
