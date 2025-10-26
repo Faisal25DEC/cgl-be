@@ -55,10 +55,13 @@ app.use(async (_req, _res, next) => {
 
 // ❗ Do NOT call app.listen() on Vercel.
 // Export the app so @vercel/node can invoke it per request.
-export default app;
 
 // (Optional) local dev entrypoint
-if (process.env.NODE_ENV !== "production") {
-  const PORT = process.env.PORT || 4000;
-  app.listen(PORT, () => console.log(`[CGL] Server listening on http://localhost:${PORT}`));
-}
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, async () => {
+  await ensureDB();
+  console.log(`[CGL] Server listening on http://localhost:${PORT}`);
+});
+
+export default app;
