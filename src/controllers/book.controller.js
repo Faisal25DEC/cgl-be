@@ -1,4 +1,4 @@
-import Book from '../models/Book.js';
+import Book from '../models/book.js';
 import Chapter from '../models/Chapter.js';
 import Record from '../models/Record.js';
 import { nextVisible, cmpVisible } from '../utils/numbering.js';
