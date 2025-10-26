@@ -1,7 +1,7 @@
-import Book from '../models/book.js';
-import Chapter from '../models/Chapter.js';
-import Record from '../models/Record.js';
-import { nextVisible, cmpVisible } from '../utils/numbering.js';
+import Book from "../models/Book.js";
+import Chapter from "../models/Chapter.js";
+import Record from "../models/Record.js";
+import { nextVisible, cmpVisible } from "../utils/numbering.js";
 
 export async function listBooks(req, res) {
   const books = await Book.find({}).sort({ visibleNumber: 1 });
@@ -20,7 +20,7 @@ export async function createBook(req, res) {
 
 export async function getBook(req, res) {
   const book = await Book.findById(req.params.id);
-  if (!book) return res.status(404).json({ ok: false, error: 'Book not found' });
+  if (!book) return res.status(404).json({ ok: false, error: "Book not found" });
   res.json({ ok: true, data: book });
 }
 
